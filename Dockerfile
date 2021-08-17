@@ -1,6 +1,6 @@
-FROM pandoc/core:latest
+FROM pandoc/ubuntu
 
-RUN apk --no-cache add curl &&\
-    curl -O -L  https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-3/wkhtmltox-0.12.6-3.archlinux-x86_64.pkg.tar.xz &&\
-    pacman -U wkhtmltox-0.12.6-3.archlinux-x86_64.pkg.tar.xz &&\
-    rm wkhtmltox-0.12.6-3.archlinux-x86_64.pkg.tar.xz
+RUN apt-get install -y curl &&\
+    curl -O -L  https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb &&\
+    apt-get install -y wkhtmltox_0.12.6-1.focal_amd64.deb &&\
+    rm wkhtmltox_0.12.6-1.focal_amd64.deb
